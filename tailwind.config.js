@@ -21,8 +21,8 @@ module.exports = {
                 "border-dark": "#2d3748",
             },
             fontFamily: {
-                "display": ["Manrope", "sans-serif"],
-                "body": ["Noto Sans", "sans-serif"],
+                "display": ["var(--font-manrope)", "sans-serif"],
+                "body": ["var(--font-noto-sans)", "sans-serif"],
             },
         },
     },
