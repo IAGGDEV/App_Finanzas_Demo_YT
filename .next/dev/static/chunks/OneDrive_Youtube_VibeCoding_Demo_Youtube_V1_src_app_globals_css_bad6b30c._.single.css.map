@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/OneDrive/Youtube_VibeCoding/Demo_Youtube_V1/src/app/globals.css"],"sourcesContent":["@tailwind base;\r\n@tailwind components;\r\n@tailwind utilities;\r\n\r\n:root {\r\n  --background: #0a0a0b;\r\n  --foreground: #f8fafc;\r\n  --primary: #3b82f6;\r\n  --primary-foreground: #ffffff;\r\n  --card: #111114;\r\n  --card-foreground: #f8fafc;\r\n  --border: #1f2937;\r\n  --input: #1f2937;\r\n  --ring: #3b82f6;\r\n}\r\n\r\nbody {\r\n  background-color: var(--background);\r\n  color: var(--foreground);\r\n  font-family: 'Inter', sans-serif;\r\n}\r\n\r\n@layer base {\r\n  * {\r\n    @apply border-border;\r\n  }\r\n}\r\n\r\n.glass-card {\r\n  @apply bg-card/50 backdrop-blur-md border border-white/10 shadow-xl rounded-2xl;\r\n}\r\n\r\n.gradient-text {\r\n  @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-emerald-400 font-bold;\r\n}\r\n"],"names":[],"mappings":"AAAA;;AACA;;AACA;;AAEA;;;;;;;;;;;;AAYA;;;;;;AAMA;EAEI;;;AAKF;;AAIA"}}]
+}
