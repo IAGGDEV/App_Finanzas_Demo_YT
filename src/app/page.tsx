@@ -61,18 +61,64 @@ export default function Home() {
                     />
                 </div>
 
-                {/* Charts Mockup Placeholder */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <div className="glass-card p-6 h-[400px] flex flex-col justify-center items-center text-slate-500">
-                        <BarChart3 size={48} className="mb-4 opacity-20" />
-                        <p>Visualización de Gráfico de Flujo de Caja</p>
+                {/* Charts Section */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div className="lg:col-span-2 glass-card p-6 min-h-[400px]">
+                        <div className="flex justify-between items-center mb-6">
+                            <h3 className="text-xl font-bold text-white">Flujo de Caja Anual</h3>
+                            <div className="flex gap-2">
+                                <span className="flex items-center gap-2 text-xs text-slate-400">
+                                    <span className="w-3 h-3 rounded-full bg-blue-500"></span> Ingresos
+                                </span>
+                                <span className="flex items-center gap-2 text-xs text-slate-400">
+                                    <span className="w-3 h-3 rounded-full bg-emerald-500"></span> Ahorros
+                                </span>
+                            </div>
+                        </div>
+                        <div className="h-[300px] flex items-end justify-between gap-2 px-4">
+                            {/* Mock Chart Bars */}
+                            {[40, 70, 45, 90, 65, 80, 50, 95, 75, 60, 85, 70].map((height, i) => (
+                                <div key={i} className="flex-1 flex flex-col gap-1 items-center group">
+                                    <div
+                                        className="w-full bg-gradient-to-t from-blue-600/20 to-blue-500 rounded-t-lg transition-all duration-500 group-hover:from-blue-500 group-hover:to-blue-400"
+                                        style={{ height: `${height}%` }}
+                                    ></div>
+                                    <span className="text-[10px] text-slate-500 mt-2">{['E', 'F', 'M', 'A', 'M', 'J', 'J', 'A', 'S', 'O', 'N', 'D'][i]}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <div className="glass-card p-6 h-[400px] flex flex-col justify-center items-center text-slate-500">
-                        <TrendingUp size={48} className="mb-4 opacity-20" />
-                        <p>Análisis de Gastos por Categoría</p>
+                    <div className="glass-card p-6 flex flex-col">
+                        <h3 className="text-xl font-bold text-white mb-6">Distribución de Gastos</h3>
+                        <div className="flex-1 flex flex-col justify-center gap-6">
+                            <ExpenseItem label="Operaciones" value="45%" color="bg-blue-500" />
+                            <ExpenseItem label="Marketing" value="25%" color="bg-emerald-500" />
+                            <ExpenseItem label="Recursos Humanos" value="20%" color="bg-amber-500" />
+                            <ExpenseItem label="Otros" value="10%" color="bg-slate-500" />
+
+                            <div className="mt-8 p-4 rounded-xl bg-blue-600/10 border border-blue-500/20">
+                                <p className="text-sm text-blue-400 font-medium leading-relaxed">
+                                    💡 Tip de IA: Tus gastos operativos han bajado un 2% este mes. Considera reinvertir en Marketing.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
+        </div>
+    );
+}
+
+function ExpenseItem({ label, value, color }: { label: string, value: string, color: string }) {
+    return (
+        <div className="space-y-2">
+            <div className="flex justify-between text-sm">
+                <span className="text-slate-400">{label}</span>
+                <span className="text-white font-bold">{value}</span>
+            </div>
+            <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                <div className={`h-full ${color} rounded-full`} style={{ width: value }}></div>
+            </div>
         </div>
     );
 }
