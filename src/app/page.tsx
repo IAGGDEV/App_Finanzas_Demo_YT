@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
     return (
         <div className="relative flex min-h-screen w-full flex-col overflow-x-hidden pb-24 bg-background-light dark:bg-background-dark text-text-main-light dark:text-text-main-dark transition-colors duration-200">
@@ -149,7 +151,7 @@ export default function Home() {
             <nav className="fixed bottom-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/90 backdrop-blur-lg border-t border-border-light dark:border-border-dark pb-safe">
                 <div className="flex h-16 items-center justify-around px-2">
                     <NavButton icon="grid_view" label="Resumen" active />
-                    <NavButton icon="bar_chart" label="Reportes" />
+                    <NavButton icon="bar_chart" label="Reportes" href="/overview" />
                     <div className="relative -top-5">
                         <button className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
                             <span className="material-symbols-outlined text-[28px]">add</span>
@@ -239,11 +241,11 @@ function LegendItem({ color, label }: { color: string, label: string }) {
     );
 }
 
-function NavButton({ icon, label, active = false }: { icon: string, label: string, active?: boolean }) {
+function NavButton({ icon, label, active = false, href = "#" }: { icon: string, label: string, active?: boolean, href?: string }) {
     return (
-        <button className={`flex flex-col items-center justify-center gap-1 w-16 ${active ? 'text-primary' : 'text-text-sec-light dark:text-text-sec-dark hover:text-primary dark:hover:text-primary transition-colors'}`}>
+        <Link href={href} className={`flex flex-col items-center justify-center gap-1 w-16 ${active ? 'text-primary' : 'text-text-sec-light dark:text-text-sec-dark hover:text-primary dark:hover:text-primary transition-colors'}`}>
             <span className="material-symbols-outlined text-[24px]">{icon}</span>
             <span className="text-[10px] font-medium">{label}</span>
-        </button>
+        </Link>
     );
 }

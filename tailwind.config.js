@@ -11,6 +11,7 @@ module.exports = {
                 "primary": "#137fec",
                 "background-light": "#f6f7f8",
                 "background-dark": "#101922",
+                "surface-dark": "#1A2633",
                 "card-light": "#ffffff",
                 "card-dark": "#1C252E",
                 "text-main-light": "#111418",
