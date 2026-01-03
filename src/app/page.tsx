@@ -150,14 +150,14 @@ export default function Home() {
             {/* Bottom Navigation */}
             <nav className="fixed bottom-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/90 backdrop-blur-lg border-t border-border-light dark:border-border-dark pb-safe">
                 <div className="flex h-16 items-center justify-around px-2">
-                    <NavButton icon="grid_view" label="Resumen" active />
+                    <NavButton icon="grid_view" label="Resumen" active href="/" />
                     <NavButton icon="bar_chart" label="Reportes" href="/overview" />
                     <div className="relative -top-5">
                         <button className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:scale-105 transition-transform">
                             <span className="material-symbols-outlined text-[28px]">add</span>
                         </button>
                     </div>
-                    <NavButton icon="account_balance" label="Bancos" />
+                    <NavButton icon="receipt_long" label="Transacc." href="/transactions" />
                     <NavButton icon="settings" label="Ajustes" />
                 </div>
             </nav>

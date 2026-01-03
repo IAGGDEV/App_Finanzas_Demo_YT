@@ -160,7 +160,7 @@ export default function OverviewPage() {
                             <span className="material-symbols-outlined text-[28px]">add</span>
                         </button>
                     </div>
-                    <NavButton icon="account_balance" label="Bancos" />
+                    <NavButton icon="receipt_long" label="Transacc." href="/transactions" />
                     <NavButton icon="settings" label="Ajustes" />
                 </div>
             </nav>
